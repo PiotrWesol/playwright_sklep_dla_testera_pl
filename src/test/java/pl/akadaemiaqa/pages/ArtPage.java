@@ -5,8 +5,6 @@ import lombok.Getter;
 import pl.akadaemiaqa.pages.sections.products.FilterBySection;
 import pl.akadaemiaqa.pages.sections.products.ProductsSection;
 
-import java.util.logging.Filter;
-
 import static pl.akademiaqa.utils.PageUtils.waitForPageToLoad;
 
 @Getter

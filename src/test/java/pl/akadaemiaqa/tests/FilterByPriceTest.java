@@ -2,7 +2,6 @@ package pl.akadaemiaqa.tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.akadaemiaqa.BaseTest;
 import pl.akadaemiaqa.pages.ArtPage;
 import pl.akadaemiaqa.pages.HomePage;
 import pl.akademiaqa.utils.Properties;

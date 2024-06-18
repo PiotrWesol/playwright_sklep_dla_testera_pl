@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import pl.akadaemiaqa.BaseTest;
 import pl.akadaemiaqa.pages.HomePage;
 import pl.akadaemiaqa.pages.SearchResultsPage;
 import pl.akademiaqa.utils.Properties;
@@ -36,7 +35,7 @@ class SearchTest extends BaseTest {
     }
 
     private static Stream<Arguments> searchData() {
-        return Stream.of(Arguments.of("t-shirt", 1), Arguments.of("mug", 5), Arguments.of("frame", 4), Arguments.of("notebook", 3, Arguments.of("graphics", 3)));
+        return Stream.of(Arguments.of("t-shirt", 1), Arguments.of("mug", 5), Arguments.of("frame", 4), Arguments.of("notebook", 3), Arguments.of("graphics", 3));
     }
 
 }
