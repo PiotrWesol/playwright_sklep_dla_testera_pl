@@ -14,7 +14,7 @@ public class StringUtils {
 
     public static String toUTF8(String str){
 
-        return new String(str.getBytes(StandardCharsets.UTF_8));
+        return new String(str.getBytes(), StandardCharsets.UTF_8);
     }
 
 }

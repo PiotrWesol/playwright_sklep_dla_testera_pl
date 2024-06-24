@@ -2,16 +2,16 @@ package pl.akadaemiaqa.pages.sections.productDetailsPage;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import pl.akadaemiaqa.pages.BasePage;
 
-public class ProductCustomizationSection {
+public class ProductCustomizationSection extends BasePage {
 
-    private Page page;
     private Locator customMessageInput;
     private Locator saveCustomizationButton;
     private Locator customizationLabel;
 
     public ProductCustomizationSection(Page page) {
-        this.page = page;
+        super(page);
         this.customMessageInput = page.locator("#field-textField1");
         this.saveCustomizationButton = page.locator("button[name=submitCustomizedData]");
         this.customizationLabel = page.locator(".customization-message");

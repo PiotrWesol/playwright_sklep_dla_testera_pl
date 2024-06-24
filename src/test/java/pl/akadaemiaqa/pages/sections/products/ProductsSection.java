@@ -2,6 +2,7 @@ package pl.akadaemiaqa.pages.sections.products;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import pl.akadaemiaqa.pages.BasePage;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -10,13 +11,12 @@ import java.util.stream.Collectors;
 
 import static pl.akademiaqa.utils.StringUtils.toUTF8;
 
-public class ProductsSection {
+public class ProductsSection extends BasePage {
 
-    private Page page;
     private List<Locator> products;
 
     public ProductsSection(Page page) {
-        this.page = page;
+        super(page);
         this.products = page.locator(".js-product").all();
 
     }

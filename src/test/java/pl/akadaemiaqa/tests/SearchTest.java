@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import pl.akadaemiaqa.pages.HomePage;
 import pl.akadaemiaqa.pages.SearchResultsPage;
-import pl.akademiaqa.utils.Properties;
 
 import java.util.stream.Stream;
 
@@ -20,8 +19,7 @@ class SearchTest extends BaseTest {
     @BeforeEach
     void beforeEach() {
         homePage = new HomePage(page);
-        page.navigate(Properties.getProperty("app.url"));
-        homePage.getTopNavigationSection().setPageLanguageToEn();
+
     }
 
     @DisplayName("Search for products")
@@ -29,7 +27,7 @@ class SearchTest extends BaseTest {
     @MethodSource("searchData")
     void should_return_products_by_product_name(String productName, int productCounter) {
 
-        SearchResultsPage searchResultsPage = homePage.getTopMenuAndSearchSection().searchForProducts(productName);
+        SearchResultsPage searchResultsPage = homePage.getTopMenuAndSearchSection().searchForProduct(productName);
         assertThat(searchResultsPage.getSearchResultsSection().getProducts().size()).isEqualTo(productCounter);
 
     }

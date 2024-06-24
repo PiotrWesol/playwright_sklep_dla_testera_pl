@@ -3,15 +3,15 @@ package pl.akadaemiaqa.pages.sections.products;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import pl.akadaemiaqa.pages.BasePage;
 import pl.akademiaqa.utils.StringUtils;
 
 import java.util.Arrays;
 
 import static pl.akademiaqa.utils.StringUtils.toUTF8;
 
-public class FilterBySection {
+public class FilterBySection extends BasePage {
 
-    private Page page;
     private Locator leftSlider;
 
     private Locator compositionMattPaper;
@@ -19,7 +19,7 @@ public class FilterBySection {
     private Locator priceLabel;
 
     public FilterBySection(Page page) {
-        this.page = page;
+        super(page);
         this.leftSlider = page.locator(".ui-slider-handle").first();
         this.priceLabel = page.locator("#search_filters li p");
         this.compositionMattPaper = page.getByRole(AriaRole.CHECKBOX, new Page.GetByRoleOptions().setName("Matt paper"));

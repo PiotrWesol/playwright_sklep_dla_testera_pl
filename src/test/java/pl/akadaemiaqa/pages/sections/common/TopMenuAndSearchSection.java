@@ -1,4 +1,4 @@
-package pl.akadaemiaqa.pages.sections;
+package pl.akadaemiaqa.pages.sections.common;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
@@ -7,7 +7,6 @@ import pl.akadaemiaqa.pages.ArtPage;
 import pl.akadaemiaqa.pages.SearchResultsPage;
 
 public class TopMenuAndSearchSection {
-
     private Page page;
     private Locator searchInput;
     private Locator artLink;
@@ -18,7 +17,7 @@ public class TopMenuAndSearchSection {
         this.artLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Art").setExact(true));
     }
 
-    public SearchResultsPage searchForProducts(String productName) {
+    public SearchResultsPage searchForProduct(String productName) {
         searchInput.fill(productName);
         page.keyboard().press("Enter");
 

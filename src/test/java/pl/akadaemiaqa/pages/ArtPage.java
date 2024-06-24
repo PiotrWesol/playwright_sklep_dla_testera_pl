@@ -8,12 +8,13 @@ import pl.akadaemiaqa.pages.sections.products.ProductsSection;
 import static pl.akademiaqa.utils.PageUtils.waitForPageToLoad;
 
 @Getter
-public class ArtPage {
+public class ArtPage extends BasePage{
 
     private ProductsSection productsSection;
     private FilterBySection filterBySection;
 
     public ArtPage(Page page) {
+        super(page);
         waitForPageToLoad(page);
         this.productsSection = new ProductsSection(page);
         this.filterBySection = new FilterBySection(page);
